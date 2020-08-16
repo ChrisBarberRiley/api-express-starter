@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ChrisBarberRiley/api-express-starter#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
