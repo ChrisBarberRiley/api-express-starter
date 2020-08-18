@@ -9,3 +9,16 @@ script:
     - docker run barberriley/api-express-starter npm run test
 
 language: generic
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "aceville-cbr-test"
+    env: "AcevilleCbrTest-env"
+    bucket_name: "elasticbeanstalk-us-east-1-604625100461"
+    bucket_path: "aceville-cbr-test"
+    on:
+        branch: master
+    access_key_id: "$access_key_id"
+    secret_access_key:
+        secure: "$secret_access_key"

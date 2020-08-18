@@ -16,4 +16,4 @@ COPY . .
 
 EXPOSE 80
 
-CMD [ "nodemon", "src/server.js" ]
+CMD [ "node", "src/server.js" ]
