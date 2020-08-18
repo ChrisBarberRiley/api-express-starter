@@ -5,4 +5,7 @@ services:
 before_install:
     - docker build -t barberriley/api-express-starter -f Dockerfile.dev .
 
+script:
+    - docker run barberriley/api-express-starter npm run test
+
 language: generic
