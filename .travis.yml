@@ -3,20 +3,20 @@ services:
     - docker
 
 before_install:
-    - docker build -t barberriley/api-express-starter -f Dockerfile.dev .
+    - docker build -t example -f Dockerfile.dev .
 
 script:
-    - docker run barberriley/api-express-starter npm run test
+    - docker run example npm run test
 
 language: generic
 
 deploy:
     provider: elasticbeanstalk
     region: "us-east-1"
-    app: "aceville-cbr-test"
-    env: "AcevilleCbrTest-env"
-    bucket_name: "elasticbeanstalk-us-east-1-604625100461"
-    bucket_path: "aceville-cbr-test"
+    app: "example"
+    env: "example"
+    bucket_name: "example"
+    bucket_path: "example"
     on:
         branch: master
     access_key_id: $AWS_ACCESS_KEY
