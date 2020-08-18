@@ -8,7 +8,7 @@ before_install:
 script:
     - docker run barberriley/api-express-starter npm run test
 
-language: generic
+language: node_js
 
 deploy:
     provider: elasticbeanstalk
