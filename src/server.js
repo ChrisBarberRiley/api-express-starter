@@ -3,12 +3,15 @@ const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const app = express();
-
+const logger = require("./middleware/logger");
 const api = require("./api");
 
 require("dotenv").config();
 
-app.use(morgan("dev"));
+if (process.env.NODE_ENV == "development") {
+    app.use(morgan("dev"));
+    app.use(logger);
+}
 app.use(express.json());
 app.use(cors());
 
